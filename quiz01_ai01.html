@@ -53,7 +53,9 @@
 
         .logo {
             /* 設定背景圖大小，顏色僅容易辨識 */
-            width: 1024px;
+            /* 不需要再設定寬度，wrapper那邊就有設定了 */
+            /* 只需要設定載入圖片的高度，讓圖片塞進來 */
+            /* width: 1024px; */
             height: 240px;
             background-color: var(--brown-light);
 
@@ -71,9 +73,9 @@
 
         .nav {
             background-color: var(--brown-dark);
-
             /* 字的水平位置 */
             text-align: center;
+            /* 控制nav這區塊，文字到上下左右的距離 */
             padding-top: 20px;
             padding-bottom: 20px;
         }
@@ -100,6 +102,7 @@
             color: var(--text-light);
 
             /* padding(元素裡面)單一個超連結(清單)的上下左右的間距 */
+            /* 控制5個文字方塊到上下左右的距離 */
             padding-top: 15px;
             padding-bottom: 15px;
             padding-left: 20px;
@@ -146,6 +149,7 @@
         }
 
         .content a {
+            /* 要將文字置中，可以先變成block，再用margin調整 */
             display: block;
             background-color: var(--matcha);
             width: 130px;
