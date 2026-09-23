@@ -9,8 +9,40 @@
     <style>
         /* 設定全域變數，後續呼叫用var() */
         :root {
-            --bgcolor: rgb(218, 218, 218);
-            --conbgcolor01: #c0afaf;
+            /* ===== 英國下午茶風格 ===== */
+
+            /* 網頁背景：英式老店的米灰色 */
+            --bgcolor: #D9D2C3;
+
+            /* 內容背景：奶油白 */
+            --conbgcolor01: #FFF9EA;
+
+            /* 主要顏色：英倫深藍 */
+            --primary: #173B4D;
+
+            /* 次要顏色：深藍綠 */
+            --secondary: #1E3A46;
+
+            /* 強調色：英倫復古紅 */
+            --accent: #A43D3D;
+
+            /* 茶點金棕色 */
+            --tea-brown: #A9784F;
+
+            /* 淺茶色 */
+            --tea-light: #D6B98C;
+
+            /* 奶油色 */
+            --cream: #FFF9EA;
+
+            /* 深咖啡文字 */
+            --text-dark: #493A2F;
+
+            /* 淺色文字 */
+            --text-light: #FFF9EA;
+
+            /* 復古金色陰影 */
+            --shadow: #8C7356;
         }
 
         /* 讓所有邊框距離的預設設置為0，通常都會有這一段 */
@@ -38,19 +70,23 @@
             /* 設定背景圖大小，顏色僅容易辨識 */
             width: 1024px;
             height: 240px;
-            background-color: rgb(0, 139, 93);
+            background-color: var(--tea-light);
+
             /* 底下為帶入背景圖，使用image,position,size */
             /* 注意使用url */
             background-image: url(image/tea.avif);
+
             /* 設定x、y軸位置 */
             background-position: center center;
+
             /* cover：等比例放大，覆蓋背景圖 */
             background-size: cover;
             background-repeat: no-repeat;
         }
 
         .nav {
-            background-color: #cc6565;
+            background-color: var(--secondary);
+
             /* 字的水平位置 */
             text-align: center;
             padding-top: 20px;
@@ -72,28 +108,35 @@
         .nav ul li a {
             /* 文字裝飾線的屬性 */
             text-decoration: none;
-            background-color: #630b0b;
+
+            background-color: var(--primary);
+
             /* 字體顏色 */
-            color: aliceblue;
+            color: var(--text-light);
+
             /* padding(元素裡面)單一個超連結(清單)的上下左右的間距 */
             padding-top: 15px;
             padding-bottom: 15px;
             padding-left: 20px;
             padding-right: 20px;
+
             /* margin(元素外面)各個超連結區塊的間隔 */
             margin-left: 10px;
+
             /* 讓框框有圓角 */
             border-radius: 5px;
+
             /* 陰影(x軸的陰影,y軸的陰影,模糊度,厚度,顏色) */
-            box-shadow: 2px 2px 2px 2px #6e6e6e;
+            box-shadow: 2px 2px 2px 2px var(--shadow);
+
             font-size: 20px;
             font-weight: bold;
         }
 
         /* :hover 滑鼠移到超連結上，超連結會有什麼反應 */
         .nav ul li a:hover {
-            box-shadow: 2px 2px 2px 2px #c9fbff;
-            color: beige;
+            box-shadow: 2px 2px 2px 2px var(--accent);
+            color: var(--cream);
         }
 
         /* padding進階技巧：後面兩變數分別為 上下30，左右80 */
@@ -104,19 +147,22 @@
 
         .content h1 {
             text-align: center;
-            color: #630b0b;
+            color: var(--primary);
             font-size: 48px;
         }
 
         .content p {
             font-size: 18px;
+
             /* 行距 */
             margin-top: 20px;
+
+            color: var(--text-dark);
         }
 
         .content a {
             display: block;
-            background-color: #630b0b;
+            background-color: var(--accent);
             width: 130px;
             height: 40px;
 
@@ -126,26 +172,30 @@
             margin-right: auto;
 
             text-decoration: none;
-            color: aliceblue;
+            color: var(--text-light);
+
             /* 水平置中 */
             text-align: center;
+
             /* <純文字版>line-height 文字垂直置中，跟height數值一樣；padding多半使用於方塊對齊 */
             /* 如果使用padding，是將"文字方塊"只會調整成跟某一邊的距離，不會置中於文字方塊 */
             line-height: 40px;
+
             font-size: 20px;
             font-weight: bold;
-            box-shadow: 2px 2px 2px 2px #6e6e6e;
+
+            box-shadow: 2px 2px 2px 2px var(--shadow);
             border-radius: 5px;
         }
 
         .content a:hover {
-            color: antiquewhite;
-            box-shadow: 2px 2px 2px 2px #c9fbff;
+            color: var(--cream);
+            box-shadow: 2px 2px 2px 2px var(--primary);
         }
 
         .footer {
-            background-color: rgb(92, 77, 12);
-            color: beige;
+            background-color: var(--secondary);
+            color: var(--tea-light);
             text-align: center;
             padding-top: 10px;
             padding-bottom: 10px;
@@ -160,6 +210,7 @@
     <div class="wrapper">
         <div class="banner">
             <div class="logo"> </div>
+
             <!-- nav選單 -->
             <div class="nav">
                 <!-- ul：無序列表，代表這是一整組列表 -->
@@ -176,14 +227,20 @@
 
             </div>
         </div>
+
         <div class="content">
             <h1>歡迎光臨</h1>
+
             <p>微微考試組圖個人以前搜尋引擎眼裡照顧也不效益，高雄社會主義聯絡人，模糊工具，看見並沒有購買當初實業同學那就目光，不能下載收集精神，女人一支執行環境站內解釋友情連結管理總數，線路旅遊協調國內社區一件東。</p>
+
             <p>笑着日韓政策，身體逐步開發組合高雄一看，屏東無聊只不過上述不斷公佈安裝空間諮詢不良認識都能查找，主題商標年輕人公佈規劃彷彿標誌，進入經驗概念消息，上網你能台北相比數碼相機，趨勢這時工作人員以外，十二因為差不多對此能夠寂寞讓你是不是分配房間望着玩具，不禁資金改進拍攝演唱小孩貼布，選項點此美元大力反對觀看肌膚教授臺灣人編輯講話，技能戰鬥湖口細節只要日子隊伍走向男孩市場價下載，一句出售，它們人物進步妻。
             </p>
+
             <p>開心隊伍研究意外心靈手段股市同志部門衛生姓名，污染你要中央並不享受無疑財政，科技有限公司有人難道玩具從來沒建築空中雲林說法宣佈探索，讀者國內主管超級不承擔，網站位置人才文件大小，費用建設她說矛盾再度。</p>
+
             <a href="#">了解更多</a>
         </div>
+
         <div class="footer">
             版權所有@2026
         </div>
