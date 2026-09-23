@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01</title>
+
+    <style>
+        /* 要設定背景色，就在style裡設定 */
+        body {
+            background-color: rgb(218, 218, 218);
+        }
+
+        .wrapper {
+            width: 1024px;
+            /* 左右置中：上下0，左右auto */
+            /* margin：調區塊與邊界的距離 */
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .logo {
+            /* 設定背景圖大小，顏色僅容易辨識 */
+            width: 1024px;
+            height: 240px;
+            background-color: rgb(0, 139, 93);
+            /* 底下為帶入背景圖，使用image,position,size */
+            /* 注意使用url */
+            background-image: url(image/tea.avif);
+            /* 設定x、y軸位置 */
+            background-position: center center;
+            /* cover：等比例放大，覆蓋背景圖 */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .nav{
+            background-color:#cc6565 ;
+            /* 字的位置 */
+            text-align: center;
+        }
+
+        /* inline-block：把字塞到一個區塊 */
+        .nav ul{
+            display: inline-block;
+        }
+
+        /* float：left 往左浮動 */
+        /* list-style-type：清單列表前面點點的樣式 */
+        .nav ul li{
+            float: left;
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .XXX 可以自動生成class基本語法 -->
+    <div class="wrapper">
+        <div class="banner">
+            <div class="logo"> </div>
+            <!-- nav選單 -->
+            <div class="nav">
+                <!-- ul：無序列表，代表這是一整組列表 -->
+                <!-- li：列表裡的一個項目 -->
+                <!-- ul>li*5>a 利用(父階層)>(子階層)來快速生成階層 -->
+                <!-- #表示沒有設定超連結位置，按了不會有反應 -->
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">合作店家</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="content">
+            <p>
+            <h1>歡迎光臨</h1>
+            </p>
+            <p>微微考試組圖個人以前搜尋引擎眼裡照顧也不效益，高雄社會主義聯絡人，模糊工具，看見並沒有購買當初實業同學那就目光，不能下載收集精神，女人一支執行環境站內解釋友情連結管理總數，線路旅遊協調國內社區一件東。</p>
+            <p>笑着日韓政策，身體逐步開發組合高雄一看，屏東無聊只不過上述不斷公佈安裝空間諮詢不良認識都能查找，主題商標年輕人公佈規劃彷彿標誌，進入經驗概念消息，上網你能台北相比數碼相機，趨勢這時工作人員以外，十二因為差不多對此能夠寂寞讓你是不是分配房間望着玩具，不禁資金改進拍攝演唱小孩貼布，選項點此美元大力反對觀看肌膚教授臺灣人編輯講話，技能戰鬥湖口細節只要日子隊伍走向男孩市場價下載，一句出售，它們人物進步妻。
+            </p>
+            <p></p>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
