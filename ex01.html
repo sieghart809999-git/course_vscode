@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise01</title>
+    <link rel="stylesheet" href="css/allcss.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 10px;
+        }
+
+        .logo {
+            height: 240px;
+            background-color: var(--brown-light);
+            background-image: url(image/tea.avif);
+            background-repeat: no-repeat;
+        }
+
+        .nav {
+            background-color: var(--brown-dark);
+            text-align: center;
+        }
+
+        .nav ul {
+            display: inline-block;
+        }
+
+        .nav ul li {
+            float: left;
+            list-style-type: none;
+        }
+
+        .nav ul li a {
+            background-color: var(--brown);
+            text-decoration: none;
+            color: var(--text-light);
+
+            font-size: 24px;
+            display: block;
+
+            margin-left: 30px;
+            padding: 15px 20px;
+            box-shadow: 2px 2px 2px 2px var(--shadow);
+            border-radius: 5px;
+        }
+
+        .nav ul li a:hover {
+            box-shadow: 2px 2px 2px var(--hover);
+            color: var(--cream);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <div class="logo bg-img"> </div>
+            <div class="nav fw700">
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">合作店家</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+
+</html>

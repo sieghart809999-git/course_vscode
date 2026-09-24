@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習02_JavaScript20260924</title>
+    <link rel="stylesheet" href="css/allcss.css">
+</head>
+
+<body>
+    <!-- javascript的script打在body這邊 -->
+    <!-- class屬於css，id屬於javascript -->
+    <p class="mytitle-03" id="demo">JavaScript練習</p>
+    <p class="mytitle-01" id="001">這是一個大標題1</p>
+    <p class="mytitle-01" id="002">這是一個大標題2</p>
+    <p class="mytitle-01" id="003">這是一個大標題3</p>
+    <p class="mytitle-01" id="004">這是一個大標題4</p>
+    <p class="mytitle-01" id="005">這是一個大標題5</p>
+
+    <!-- javascript載入套件的語法 -->
+    <script src="js/jquery-4.0.0.js"></script>
+
+    <script>
+        // javascript 原生語法
+        // document 偵查全文件
+        // getElementById 透過元素的id，找到HTML裡的某一個元素
+        // innerHTML 讀取或修改某個HTML元素裡面的HTML內容
+        document.getElementById("demo").innerHTML = "Hello World!";
+        document.getElementById("001").innerHTML = "?";
+
+        //可比較上下語法差異，jquery語法相對簡易 
+
+        // jquery語法
+        // $("#id").html("替換文字")
+        $("#002").html("??");
+
+        // F12>Console標籤，可以在此處測試結果
+        // console:瀏覽器的主控台工具，.log:把資料紀錄、顯示出來
+        for (i = 0; i < 10; i++) {
+            console.log("hey! i'm " + i);
+        }
+
+        for (i = 1; i < 10; i++) {
+            for (j = 1; j < 10; j++) {
+                console.log(i + " x " + j + " = " + i * j)
+            }
+        }
+
+        for (i = 0; i < 11; i++) {
+            $("#005").append('<p class="mytitle-03">這是第 '+ i + '次迴圈</p>');
+        }
+        // 或是以下寫法
+        // for (i = 0; i < 11; i++) {
+        //     $("#005").append(`<p class="mytitle-03">這是第 ${i} 次迴圈</p>`);
+        // }
+    </script>
+</body>
+
+</html>

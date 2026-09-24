@@ -5,30 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>練習01</title>
+    <!-- 代入自訂的css語法 -->
+    <link rel="stylesheet" href="css/allcss.css">
 
     <style>
-        /* 設定全域變數，後續呼叫用var() */
-        :root {
-            /* ===== 日系咖啡廳配色 ===== */
-            --bgcolor: #E8DFD2;
-            --conbgcolor01: #F7F2EA;
-
-            /* 主要咖啡色 */
-            --brown-dark: #4A3328;
-            --brown: #6B4F3A;
-            --brown-light: #A67B5B;
-
-            /* 輔助色 */
-            --cream: #FFFDF8;
-            --caramel: #C49A6C;
-            --matcha: #68745A;
-
-            /* 文字與裝飾 */
-            --text-dark: #3E3028;
-            --text-light: #FFFDF8;
-            --shadow: #8B796B;
-            --hover: #D8C3A5;
-        }
 
         /* 讓所有邊框距離的預設設置為0，通常都會有這一段 */
         * {
@@ -64,10 +44,10 @@
             background-image: url(image/tea.avif);
 
             /* 設定x、y軸位置 */
-            background-position: center center;
+            /* background-position: center center; (拉去allcss) */
 
             /* cover：等比例放大，覆蓋背景圖 */
-            background-size: cover;
+            /* background-size: cover; (拉去allcss)*/
             background-repeat: no-repeat;
         }
 
@@ -191,6 +171,245 @@
             font-size: 16px;
             font-weight: bold;
         }
+
+        /* 響應式RWD */
+        /* 1024px是根據上面wrapper的值 */
+        /* @media 讓CSS知道符合後面條件才執行 */
+        /* screen and (max-width: 1024px)
+        符合螢幕裝置，而且最大寬度是1024px */
+        @media screen and (max-width: 1024px) {
+            .wrapper {
+                width: 90%;
+            }
+
+            .logo {
+                width: 100%;
+                height: 120px;
+                background-color: var(--brown);
+            }
+
+            /* 選單的寬度可以塞滿整個1024px的寬度 */
+            .nav ul {
+                display: block;
+                padding-left: 25%;
+                padding-right: 25%;
+            }
+
+            /* 讓螢幕縮小時，選單可以排成直的 */
+            .nav ul li {
+                float: none;
+            }
+
+            /* 預設上排成直的，會因為前面設定的padding而有所重疊，所以要改為block */
+            .nav ul li a {
+                display: block;
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+
+            .nav ul li:last-child a {
+                margin-bottom: 0;
+            }
+
+            /* .nav ul li:nth-child(3){
+                background-color: #e65b0a;
+            } */
+
+            .content {
+                padding: 10px 20px;
+            }
+
+            .content h1 {
+                font-size: 30px;
+            }
+
+            .content p {
+                line-height: 2;
+            }
+
+            .footer {
+                padding: 5px;
+            }
+        }
+
+        /* =========================
+   手機版 Web App
+   ========================= */
+        @media screen and (max-width: 600px) {
+
+            /* 整體直接填滿手機畫面 */
+            .wrapper {
+                width: 100%;
+                margin: 0;
+            }
+
+
+            /* ===== Banner ===== */
+
+            .logo {
+                width: 100%;
+                height: 160px;
+
+                background-position: center center;
+                background-size: cover;
+            }
+
+
+            /* ===== 導覽列 ===== */
+
+            .nav {
+                /* 固定在手機畫面最下面 */
+                position: fixed;
+
+                left: 0;
+                bottom: 0;
+
+                width: 100%;
+
+                padding: 0;
+
+                background-color: var(--brown-dark);
+
+                /* 確保不會被其他內容蓋住 */
+                z-index: 1000;
+            }
+
+
+            .nav ul {
+                display: flex;
+
+                width: 100%;
+
+                padding: 0;
+                margin: 0;
+            }
+
+
+            .nav ul li {
+                /* 5個選單平均分配寬度 */
+                flex: 1;
+
+                float: none;
+
+                list-style-type: none;
+            }
+
+
+            .nav ul li a {
+                display: block;
+
+                margin: 0;
+                padding: 14px 2px;
+
+                background-color: transparent;
+
+                color: var(--text-light);
+
+                font-size: 14px;
+                font-weight: normal;
+
+                text-align: center;
+
+                border-radius: 0;
+
+                /* 手機版取消桌機按鈕陰影 */
+                box-shadow: none;
+            }
+
+
+            .nav ul li a:hover {
+                background-color: var(--brown);
+                box-shadow: none;
+            }
+
+
+            /* 最後一個原本在1024px設定 margin-bottom:0
+       這裡統一清除 */
+            .nav ul li:last-child a {
+                margin-bottom: 0;
+            }
+
+
+            /* ===== 主要內容 ===== */
+
+            .content {
+                /*
+        上下左右留白
+        底部要多留一點空間，
+        因為下面有固定導覽列
+        */
+                padding: 30px 20px 100px;
+
+                background-color: var(--conbgcolor01);
+            }
+
+
+            .content h1 {
+                font-size: 30px;
+
+                text-align: left;
+
+                margin-bottom: 25px;
+            }
+
+
+            .content p {
+                font-size: 16px;
+
+                /*
+        每一行文字之間的距離
+        */
+                line-height: 1.8;
+
+                /*
+        段落與段落之間距離
+        */
+                margin-top: 20px;
+            }
+
+
+            /* ===== 主要按鈕 ===== */
+
+            .content a {
+                /*
+        手機按鈕做寬一點，
+        比較容易用手指按
+        */
+                width: 100%;
+                height: 48px;
+
+                margin-top: 30px;
+
+                line-height: 48px;
+
+                font-size: 16px;
+
+                box-shadow: none;
+
+                border-radius: 10px;
+            }
+
+
+            .content a:hover {
+                background-color: var(--brown);
+                box-shadow: none;
+            }
+
+
+            /* ===== Footer ===== */
+
+            .footer {
+                padding: 15px 10px;
+
+                /*
+        導覽列固定在底部，
+        Footer也要避免被擋住
+        */
+                margin-bottom: 60px;
+
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -198,7 +417,7 @@
     <!-- .XXX 可以自動生成class基本語法 -->
     <div class="wrapper">
         <div class="banner">
-            <div class="logo"> </div>
+            <div class="logo bg-img"> </div>
 
             <!-- nav選單 -->
             <div class="nav">
@@ -218,13 +437,16 @@
         </div>
 
         <div class="content">
-            <h1>歡迎光臨</h1>
+            <h1 class="mytitle-01">歡迎光臨</h1>
+            <div class="mytitle-02">歡迎再次光臨</div>
+            <div class="mytitle-03">歡迎歡迎</div>
 
-            <p>微微考試組圖個人以前搜尋引擎眼裡照顧也不效益，高雄社會主義聯絡人，模糊工具，看見並沒有購買當初實業同學那就目光，不能下載收集精神，女人一支執行環境站內解釋友情連結管理總數，線路旅遊協調國內社區一件東。</p>
+            <p class="dotgothic16-regular">微微考試組圖個人以前搜尋引擎眼裡照顧也不效益，高雄社會主義聯絡人，模糊工具，看見並沒有購買當初實業同學那就目光，不能下載收集精神，女人一支執行環境站內解釋友情連結管理總數，線路旅遊協調國內社區一件東。</p>
 
-            <p>笑着日韓政策，身體逐步開發組合高雄一看，屏東無聊只不過上述不斷公佈安裝空間諮詢不良認識都能查找，主題商標年輕人公佈規劃彷彿標誌，進入經驗概念消息，上網你能台北相比數碼相機，趨勢這時工作人員以外，十二因為差不多對此能夠寂寞讓你是不是分配房間望着玩具，不禁資金改進拍攝演唱小孩貼布，選項點此美元大力反對觀看肌膚教授臺灣人編輯講話，技能戰鬥湖口細節只要日子隊伍走向男孩市場價下載，一句出售，它們人物進步妻。</p>
+            <p class="zom fw400">笑着日韓政策，身體逐步開發組合高雄一看，屏東無聊只不過上述不斷公佈安裝空間諮詢不良認識都能查找，主題商標年輕人公佈規劃彷彿標誌，進入經驗概念消息，上網你能台北相比數碼相機，趨勢這時工作人員以外，十二因為差不多對此能夠寂寞讓你是不是分配房間望着玩具，不禁資金改進拍攝演唱小孩貼布，選項點此美元大力反對觀看肌膚教授臺灣人編輯講話，技能戰鬥湖口細節只要日子隊伍走向男孩市場價下載，一句出售，它們人物進步妻。
+            </p>
 
-            <p>開心隊伍研究意外心靈手段股市同志部門衛生姓名，污染你要中央並不享受無疑財政，科技有限公司有人難道玩具從來沒建築空中雲林說法宣佈探索，讀者國內主管超級不承擔，網站位置人才文件大小，費用建設她說矛盾再度。</p>
+            <p class="zom fw700">開心隊伍研究意外心靈手段股市同志部門衛生姓名，污染你要中央並不享受無疑財政，科技有限公司有人難道玩具從來沒建築空中雲林說法宣佈探索，讀者國內主管超級不承擔，網站位置人才文件大小，費用建設她說矛盾再度。</p>
 
             <a href="#">了解更多</a>
         </div>
@@ -237,4 +459,3 @@
 </body>
 
 </html>
-```
