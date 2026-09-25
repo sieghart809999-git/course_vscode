@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise01</title>
+    <link rel="stylesheet" href="css/allcss.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 10px;
+        }
+
+        .logo {
+            height: 240px;
+            background-color: var(--brown-light);
+            background-image: url(image/tea.avif);
+            background-repeat: no-repeat;
+        }
+
+        .nav {
+            background-color: var(--brown-dark);
+            text-align: center;
+        }
+
+        .nav ul {
+            display: inline-block;
+        }
+
+        .nav ul li {
+            float: left;
+            list-style-type: none;
+        }
+
+        .nav ul li a {
+            background-color: var(--brown);
+            text-decoration: none;
+            color: var(--text-light);
+
+            font-size: 24px;
+            display: block;
+
+            margin-left: 30px;
+            padding: 15px 20px;
+            box-shadow: 2px 2px 2px 2px var(--shadow);
+            border-radius: 5px;
+        }
+
+        .nav ul li a:hover {
+            box-shadow: 2px 2px 2px var(--hover);
+            color: var(--cream);
+        }
+
+        .content {
+            padding: 30px 50px;
+            background-color: var(--conbgcolor01);
+        }
+
+        .content h1 {
+            text-align: center;
+        }
+
+        .content p {
+            margin: 20px 0;
+            line-height: 2;
+        }
+
+        .content a {
+            font-size: 20px;
+            display: block;
+            text-decoration: none;
+            /* text-align: center; */
+            color: var(--text-light);
+            background-color: var(--matcha);
+            width: 100px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 2px 2px 2px 2px var(--shadow);
+            border-radius: 5px;
+            line-height: 40px;
+        }
+
+        .content a:hover {
+            box-shadow: 2px 2px 2px 2px var(--hover);
+            color: var(--cream);
+        }
+
+        .footer {
+            background-color: var(--brown-dark);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 18px;
+            padding: 5px 0;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .wrapper {
+                width: 90%;
+            }
+
+            .logo {
+                width: 100%;
+                height: 120px;
+                /* 如果有在allcss.css設定圖片置中，
+                且下面body有寫<div class="logo bg-img"> </div>
+                即可不寫底下這兩行 */
+                /* background-position: center center;
+                background-size: cover; */
+            }
+
+            .nav ul {
+                display: block;
+                padding: 0 25px;
+            }
+
+            .nav ul li {
+                float: none;
+            }
+
+            .nav ul li a {
+                margin-left: 0;
+                margin-bottom: 20px;
+                display: block;
+                padding: 10px 0;
+                font-size: 18px;
+            }
+
+            .nav ul li:last-child a{
+                margin-bottom: 0;
+            }
+
+            .content {
+                padding: 10px 20px;
+            }
+
+            .content h1 {
+                font-size: 30px;
+            }
+
+            .content p {
+                line-height: 2;
+            }
+
+            .footer {
+                padding: 5px;
+            }
+        }
+            /* =========================
+   手機版 Web App
+   ========================= */
+        @media screen and (max-width: 600px) {
+
+            /* 整體直接填滿手機畫面 */
+            .wrapper {
+                width: 100%;
+                margin: 0;
+            }
+
+
+            /* ===== Banner ===== */
+
+            .logo {
+                width: 100%;
+                height: 160px;
+
+                background-position: center center;
+                background-size: cover;
+            }
+
+
+            /* ===== 導覽列 ===== */
+
+            .nav {
+                /* 固定在手機畫面最下面 */
+                position: fixed;
+
+                left: 0;
+                bottom: 0;
+
+                width: 100%;
+
+                padding: 0;
+
+                background-color: var(--brown-dark);
+
+                /* 確保不會被其他內容蓋住 */
+                z-index: 1000;
+            }
+
+
+            .nav ul {
+                display: flex;
+
+                width: 100%;
+
+                padding: 0;
+                margin: 0;
+            }
+
+
+            .nav ul li {
+                /* 5個選單平均分配寬度 */
+                flex: 1;
+
+                float: none;
+
+                list-style-type: none;
+            }
+
+
+            .nav ul li a {
+                display: block;
+
+                margin: 0;
+                padding: 14px 2px;
+
+                background-color: transparent;
+
+                color: var(--text-light);
+
+                font-size: 14px;
+                font-weight: normal;
+
+                text-align: center;
+
+                border-radius: 0;
+
+                /* 手機版取消桌機按鈕陰影 */
+                box-shadow: none;
+            }
+
+
+            .nav ul li a:hover {
+                background-color: var(--brown);
+                box-shadow: none;
+            }
+
+
+            /* 最後一個原本在1024px設定 margin-bottom:0
+       這裡統一清除 */
+            .nav ul li:last-child a {
+                margin-bottom: 0;
+            }
+
+
+            /* ===== 主要內容 ===== */
+
+            .content {
+                /*
+        上下左右留白
+        底部要多留一點空間，
+        因為下面有固定導覽列
+        */
+                padding: 30px 20px 100px;
+
+                background-color: var(--conbgcolor01);
+            }
+
+
+            .content h1 {
+                font-size: 30px;
+
+                text-align: left;
+
+                margin-bottom: 25px;
+            }
+
+
+            .content p {
+                font-size: 16px;
+
+                /*
+        每一行文字之間的距離
+        */
+                line-height: 1.8;
+
+                /*
+        段落與段落之間距離
+        */
+                margin-top: 20px;
+            }
+
+
+            /* ===== 主要按鈕 ===== */
+
+            .content a {
+                /*
+        手機按鈕做寬一點，
+        比較容易用手指按
+        */
+                width: 100%;
+                height: 48px;
+
+                margin-top: 30px;
+
+                line-height: 48px;
+
+                font-size: 16px;
+
+                box-shadow: none;
+
+                border-radius: 10px;
+            }
+
+
+            .content a:hover {
+                background-color: var(--brown);
+                box-shadow: none;
+            }
+
+
+            /* ===== Footer ===== */
+
+            .footer {
+                padding: 15px 10px;
+
+                /*
+        導覽列固定在底部，
+        Footer也要避免被擋住
+        */
+                margin-bottom: 60px;
+
+                font-size: 14px;
+            }
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <div class="logo bg-img"> </div>
+            <div class="nav fw700">
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">合作店家</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1 class="mytitle-01">歡迎光臨</h1>
+            <p class="dotgothic16-regular">通訊先進性指出人類你怎麼採取小區實際還能得到小說，科技有限公司當地升級競爭力專欄警察，青草湖今年分別傳播加工等待所以一家調整風格上班眾多及其隱藏，兩。
+            </p>
+            <p class="dotgothic16-regular">
+                生命本書事業容量藍色人士睡覺調整紀念手冊功夫理解，種類植物大門全家快速第一章基本上以後設為報告以後股東，哈哈天氣多個，藝術相比庫存一會兒就是上班股票，遊客來看我只變化服飾工商股權電子商務計劃一部分，當天認證偉大付款就好身體，遵守登陸說話總數一家便利商店效益點評，觀眾臺中較高有意協會房間，姐姐相對房東對此創作虛擬國產通過努力食品如有因為工作，公斤不對郵遞區號大眾看不到什麼時候所在地，規律驚訝，這個。
+            </p>
+            <p class="dotgothic16-regular">
+                更大其它後來又有顯得共享就業，她是下載演唱會批評一顆發生當前位置，空間推坑王本地處理器，支付男生許多獨特精采一點的是設定期待有很多，招生負責人，醫生不肯相互鎖定，鍵盤對著立即，觀察電腦書記，專家參與。</p>
+            <a href="#" class="mytitle-03">了解更多</a>
+        </div>
+        <div class="footer">
+            版權所有 &copy; 2026 我的咖啡廳
+        </div>
+    </div>
+</body>
+
+</html>
