@@ -144,6 +144,7 @@
             color: var(--text-light);
 
             /* 水平置中 */
+            /* 預設上應該都是center，可不寫這行 */
             text-align: center;
 
             /* <純文字版>line-height 文字垂直置中，跟height數值一樣；padding多半使用於方塊對齊 */
@@ -186,6 +187,11 @@
                 width: 100%;
                 height: 120px;
                 background-color: var(--brown);
+                /* 如果有在allcss.css設定圖片置中，
+                且下面body有寫<div class="logo bg-img"> </div>
+                即可不寫底下這兩行 */
+                /* background-position: center center;
+                background-size: cover; */
             }
 
             /* 選單的寬度可以塞滿整個1024px的寬度 */
